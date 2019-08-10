@@ -7,10 +7,28 @@
 }
 
 html {
-  //This defines what 1 rem is 
-  font-size: 62.5%;
+  //This defines what 1 rem is(Custom set 1rem=10px) . Now default font size is set as 10px -Re-writing in percentage. Browser default is 16px. 10/16 = 62.5%
+  font-size: 62.5%; // 1rem=10px
+
+  @include respond(tab-land) {
+    //Width < 1200px?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    //Width < 900px?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desk) {
+    font-size: 75%; // 1rem =12px, 12/16=75%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

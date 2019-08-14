@@ -26,16 +26,39 @@
   &__left {
     width: 33.333%;
     display: table-cell;
+
+    @include respond(tab-land) {
+      display: block;
+      width: 100%;
+      @include clearfix;
+    }
   }
   &__right {
     width: 66.667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
   }
   &__img {
     display: block;
     width: 100%;
+    @include respond(tab-land) {
+      display: inline-block;
+      width: 50%;
+      height: 25rem;
+      float: left;
+      object-fit: cover;
+      -o-object-fit: cover;
+    }
+    @include respond(phone) {
+      display: none;
+    }
   }
   &__text {
     font-size: 1.4rem;
